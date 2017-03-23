@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="empty_response">Вы должны разрешит символы</string>
+    <string name="no_password_response">Не сохранено, нет пароля</string>
+    <string name="show_additional">Показать дополнительные опции </string>
+    <string name="hide_additional">Скрыть дополнительные опции </string>
+    <string name="DB_announcement">Список паролей </string>
+</resources>

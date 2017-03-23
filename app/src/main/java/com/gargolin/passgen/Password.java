@@ -26,8 +26,8 @@ public class Password {
     private int length;
 
 
-    Password( boolean numbers, boolean bigLatin,boolean smallLatin , int digits,int bigCase, int smallCase,
-          String requiredSymbols, String possibleSymbols, int length) {
+    Password(boolean numbers, boolean bigLatin, boolean smallLatin, int digits, int bigCase, int smallCase,
+             String requiredSymbols, String possibleSymbols, int length) {
         this.smallCase = smallCase;
         this.bigCase = bigCase;
         this.digits = digits;
@@ -39,7 +39,7 @@ public class Password {
         this.bigLatin = bigLatin;
         this.numbers = numbers;
         this.length = length;
-        chars = new char[length+smallCase+bigCase+digits+requiredSymbols.length()];
+        chars = new char[length + smallCase + bigCase + digits + requiredSymbols.length()];
 
     }
 
@@ -49,7 +49,7 @@ public class Password {
             char ch;
             if (dictionary.length() == j) ch = dictionary.charAt(i);
             else ch = dictionary.charAt(rand.nextInt(dictionary.length()));
-            int k = rand.nextInt(length+smallCase+bigCase+digits+requiredSymbols.length());
+            int k = rand.nextInt(length + smallCase + bigCase + digits + requiredSymbols.length());
             if (chars[k] == 0) {
                 chars[k] = ch;
                 i++;
@@ -58,9 +58,6 @@ public class Password {
     }
 
     public String creation() {
-
-        if (!(smallLatin || bigLatin || numbers))
-            password = "Your password length is shorter than sum of minimums";
         filling(requiredSymbols, requiredSymbols.length());
         if (smallLatin) filling(smallLatinSet, smallCase);
         if (bigLatin) filling(bigLatinSet, bigCase);
@@ -73,7 +70,8 @@ public class Password {
         return password = new String(chars);
     }
 
-    public String getPassword() {
+    @Override
+    public String toString() {
         return password;
     }
 
